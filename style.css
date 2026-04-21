@@ -170,6 +170,16 @@ body { background: #000; color: #fff; font-family: 'Inter', sans-serif; overflow
   z-index: 5;
 }
 
+.hero-badge {
+  position: absolute;
+  left: 6%;
+  bottom: -6%;        /* overlaps into the section below, matching the Figma */
+  width: clamp(120px, 12vw, 190px);
+  z-index: 6;
+  animation: spin-slow 14s linear infinite;
+  transform-origin: center;
+}
+
 /* ── Tagline / stats ──────────────────────────────────────── */
 .tagline-section {
   background: #000;
@@ -780,3 +790,104 @@ footer {
 [data-stagger].is-visible > *:nth-child(7)  { opacity:1; transform:none; transition-delay:660ms; }
 [data-stagger].is-visible > *:nth-child(8)  { opacity:1; transform:none; transition-delay:770ms; }
 [data-stagger].is-visible > *:nth-child(9)  { opacity:1; transform:none; transition-delay:880ms; }
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Tablet (≤ 1024px) ───────────────────────────────────── */
+@media (max-width: 1024px) {
+
+  .nav-links { display: none; }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .audience-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .outcomes-inner {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .outcomes-left {
+    position: static;
+  }
+
+  .outcomes-signup {
+    max-width: 160px;
+  }
+
+  .footer-top-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .footer-calendar-group {
+    align-self: flex-start;
+  }
+}
+
+/* ── Mobile (≤ 768px) ────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* Nav */
+  .site-nav { height: 64px; }
+  .nav-inner { padding: 0 20px; }
+  .nav-logo  { height: 36px; }
+  .btn-nav   { padding: 10px 16px; font-size: 13px; }
+
+  /* Hero */
+  .hero-logo  { width: 70%; min-width: 200px; top: 12%; }
+  .hero-photo { width: 110%; top: 8%; }
+  .hero-decor { width: 120%; }
+  .hero-badge { width: clamp(90px, 22vw, 130px); left: 4%; bottom: -5%; }
+
+  /* Tagline */
+  .tagline-section { padding: 60px 20px 80px; }
+  .tagline-stats-img { max-width: 280px; margin-bottom: 32px; }
+
+  /* About */
+  .about-section { padding: 80px 20px; }
+
+  /* Program */
+  .program-section { padding: 80px 20px; }
+  .cards-grid { grid-template-columns: 1fr; }
+
+  /* Audience */
+  .audience-section { padding: 80px 20px; }
+  .audience-cards   { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .highlight-box    { padding: 24px 20px; }
+
+  /* Outcomes */
+  .outcomes-section { padding: 80px 20px; }
+  .timeline         { padding-left: 24px; }
+  .milestone::before { left: -31px; }
+  .milestone-when   { font-size: 22px; }
+  .milestone-desc   { font-size: 16px; }
+
+  /* Footer */
+  .footer-content { padding: 60px 20px; }
+  .footer-row     { flex-direction: column; gap: 32px; }
+  .footer-desc    { font-size: 16px; }
+  .footer-bottom  { font-size: 12px; }
+}
+
+/* ── Small mobile (≤ 480px) ──────────────────────────────── */
+@media (max-width: 480px) {
+
+  .audience-cards { grid-template-columns: 1fr; }
+
+  .hero-logo  { width: 80%; top: 10%; }
+  .hero-badge { width: 90px; }
+
+  .tagline-text { font-size: 22px; }
+}
