@@ -216,8 +216,8 @@ body { background: #000; color: #fff; font-family: 'Inter', sans-serif; overflow
 
 .hero-badge {
   position: absolute;
-  left: calc(50% - 120px);
-  bottom: 8%;
+  left: 200px;
+  bottom: 10%;
   width: clamp(160px, 16vw, 240px);
   z-index: 6;
   animation: spin-slow 14s linear infinite;
@@ -902,7 +902,7 @@ footer {
   .nav-logo  { height: 36px; }
 
   /* Hero */
-  .hero-badge { width: clamp(150px, 22vw, 200px); left: calc(50% - 100px); bottom: 6%; }
+  .hero-badge { width: clamp(150px, 22vw, 200px); left: 20px; bottom: 6%; }
 
   /* Tagline */
   .tagline-section { padding: 60px 20px 80px; }
@@ -949,7 +949,7 @@ footer {
   .audience-cards > div { text-align: center; }
   .aud-card-icon       { margin: 0 auto 16px; }
 
-  .hero-badge { width: 110px; left: 4%; bottom: 5%; }
+  .hero-badge { width: 150px; left: 20px; bottom: 5%; }
 
   .tagline-text { font-size: 22px; }
 
