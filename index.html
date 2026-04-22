@@ -26,31 +26,30 @@
         <li><a href="#program">Program</a></li>
         <li><a href="#outcomes">Outcomes</a></li>
       </ul>
-      <a class="btn-nav" href="#footer">Get Involved</a>
+      <a class="btn-nav desktop-only" href="#footer">Get Involved</a>
+      <button class="nav-burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+
+  <!-- ── Mobile menu overlay ──────────────────────────────── -->
+  <div class="mobile-menu" aria-hidden="true">
+    <ul class="mobile-links">
+      <li><a href="#about">What is a Signal?</a></li>
+      <li><a href="#audience">Who it's for</a></li>
+      <li><a href="#program">Program</a></li>
+      <li><a href="#outcomes">Outcomes</a></li>
+    </ul>
+    <a class="btn-gradient" href="#footer">Get Involved</a>
+  </div>
 
   <!-- ── Hero ───────────────────────────────────────────────── -->
   <section class="hero">
     <img
       class="hero-photo"
-      src="https://www.figma.com/api/mcp/asset/634acbc4-b061-4565-9ab7-5ab2fa815ad3"
-      alt="Five Signal Fellowship students laughing together on campus"
-    />
-    <img
-      class="hero-decor"
-      src="https://www.figma.com/api/mcp/asset/4bc65931-22ae-4478-9e07-3f8b01514659"
-      alt="" aria-hidden="true"
-    />
-    <img
-      class="hero-top-decor"
-      src="https://www.figma.com/api/mcp/asset/abbdc4de-4b82-444e-920e-b6716a4437b7"
-      alt="" aria-hidden="true"
-    />
-    <img
-      class="hero-logo"
-      src="https://www.figma.com/api/mcp/asset/21168edd-4d45-4916-b2f7-4e4177448182"
-      alt="Signal Fellowship 2026"
+      src="images/hero_section.png"
+      alt="Signal Fellowship 2026 hero banner"
     />
     <img
       class="hero-badge"
@@ -81,7 +80,7 @@
   <section class="about-section" id="about">
     <div class="about-bg">
       <img
-        src="https://www.figma.com/api/mcp/asset/8245fdb7-6054-466b-80b7-f5a45d0c2c4f"
+        src="images/people_bg_imag.png"
         alt="" aria-hidden="true"
       />
     </div>
@@ -178,7 +177,7 @@
   <section class="audience-section" id="audience">
     <div class="audience-bg">
       <img
-        src="https://www.figma.com/api/mcp/asset/c09214ac-6eb0-4557-8345-1a7ee8f73d1d"
+        src="images/people_bg_imag.png"
         alt="" aria-hidden="true"
       />
     </div>
@@ -216,11 +215,15 @@
         </div>
       </div>
 
-      <div class="highlight-box" data-animate="scale-in">
-        <p>No formal qualifications needed. We are not filtering for a marketing degree or academic grade. We are looking for communication instinct, curiosity, and hunger — qualities no institution can certify.</p>
-      </div>
     </div>
   </section>
+
+  <!-- ── Highlight banner ──────────────────────────────────── -->
+  <div class="highlight-section">
+    <div class="highlight-box" data-animate="scale-in">
+      <p>No formal qualifications needed. We are not filtering for a marketing degree or academic grade. We are looking for communication instinct, curiosity, and hunger — qualities no institution can certify.</p>
+    </div>
+  </div>
 
   <!-- ── Performance / Outcomes ─────────────────────────────── -->
   <section class="outcomes-section" id="outcomes">
