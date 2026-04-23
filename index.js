@@ -1,5 +1,5 @@
 /* ── Hamburger menu toggle ───────────────────────────────── */
-const burger     = document.querySelector(".nav-burger");
+const burger = document.querySelector(".nav-burger");
 const mobileMenu = document.querySelector(".mobile-menu");
 
 burger.addEventListener("click", () => {
@@ -119,3 +119,34 @@ if (timeline) {
   );
   lineObserver.observe(timeline);
 }
+
+/* ── Accordion functionality ─────────────────────────────── */
+document.querySelectorAll(".accordion-header").forEach((header) => {
+  header.addEventListener("click", () => {
+    const accordionItem = header.closest(".accordion-item");
+    const content = accordionItem.querySelector(".accordion-content");
+    const isExpanded = header.getAttribute("aria-expanded") === "true";
+
+    // Close all other accordions
+    document.querySelectorAll(".accordion-item").forEach((item) => {
+      if (item !== accordionItem) {
+        const otherHeader = item.querySelector(".accordion-header");
+        const otherContent = item.querySelector(".accordion-content");
+        otherHeader.setAttribute("aria-expanded", "false");
+        item.removeAttribute("data-expanded");
+        otherContent.style.maxHeight = "0px";
+      }
+    });
+
+    // Toggle current accordion
+    if (isExpanded) {
+      header.setAttribute("aria-expanded", "false");
+      accordionItem.removeAttribute("data-expanded");
+      content.style.maxHeight = "0px";
+    } else {
+      header.setAttribute("aria-expanded", "true");
+      accordionItem.setAttribute("data-expanded", "true");
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+});
