@@ -145,7 +145,7 @@ body { background: #000; color: #fff; font-family: 'Inter', sans-serif; overflow
   justify-content: space-between;
 }
 
-.nav-logo { height: 50px; }
+.nav-logo { height: 50px; width: auto; }
 
 .nav-links {
   display: flex;
@@ -1089,7 +1089,7 @@ footer {
   /* Nav */
   .site-nav  { height: 64px; }
   .nav-inner { padding: 0 20px; }
-  .nav-logo  { height: 36px; }
+  .nav-logo  { height: 50px; width: auto; }
 
   /* Hero */
   .hero-badge { width: clamp(150px, 22vw, 200px); left: 20px; bottom: 6%; }
