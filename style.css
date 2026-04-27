@@ -368,7 +368,7 @@ body { background: #000; color: #fff; font-family: 'Inter', sans-serif; overflow
 }
 
 .phase-card-header {
-  height: 80px;
+  height: 220px;
   overflow: hidden;
 }
 
@@ -416,25 +416,40 @@ body { background: #000; color: #fff; font-family: 'Inter', sans-serif; overflow
 /* ── Who it's for ─────────────────────────────────────────── */
 .audience-section {
   position: relative;
-  overflow: hidden;
-  padding: 100px 40px;
+  overflow: visible;
+  padding: 80px 40px 0;
+  min-height: 792px;
+  display: flex;
+  flex-direction: column;
 }
 
 .audience-bg {
   position: absolute;
   inset: 0;
+  overflow: hidden;
 }
 
 .audience-bg img {
+  position: absolute;
   width: 100%;
-  height: 100%;
+  height: 135%;
+  top: -17.5%;
+  left: 0;
   object-fit: cover;
+  object-position: center top;
 }
 
 .audience-bg-tint {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.5);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.92) 0%,
+    rgba(0,0,0,0.35) 18%,
+    rgba(0,0,0,0.35) 68%,
+    rgba(0,0,0,0.92) 100%
+  );
+  background-color: rgba(255, 78, 0, 0.2);
 }
 
 .audience-content {
@@ -442,11 +457,14 @@ body { background: #000; color: #fff; font-family: 'Inter', sans-serif; overflow
   z-index: 2;
   max-width: 1100px;
   margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .audience-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 320px;
 }
 
 .audience-header .section-label { color: var(--green); }
@@ -478,15 +496,15 @@ body { background: #000; color: #fff; font-family: 'Inter', sans-serif; overflow
 }
 
 .aud-card-icon {
-  width: 52px;
-  height: 52px;
+  width: 38px;
+  height: 38px;
   background: var(--green);
-  border-radius: 8px;
+  border-radius: 6px;
   margin-bottom: 16px;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  -webkit-mask-size: 52px 52px;
-  mask-size: 52px 52px;
+  -webkit-mask-size: 38px 38px;
+  mask-size: 38px 38px;
 }
 
 .aud-card-title {
@@ -505,18 +523,17 @@ body { background: #000; color: #fff; font-family: 'Inter', sans-serif; overflow
   letter-spacing: -0.32px;
 }
 
-.highlight-section {
-  background: #000;
-  padding: 80px 40px 80px;
-}
-
 .highlight-box {
   background: var(--orange);
   border-radius: 8px;
   padding: 36px 48px;
   text-align: center;
   max-width: 1100px;
-  margin: 0 auto;
+  margin: 0 auto 0;
+  min-height: 147px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .highlight-box p {
@@ -649,32 +666,24 @@ body { background: #000; color: #fff; font-family: 'Inter', sans-serif; overflow
 footer {
   position: relative;
   overflow: hidden;
-  min-height: 680px;
+  min-height: 440px;
+  background: #060504;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-.footer-bg {
+.footer-blob-img {
   position: absolute;
-  inset: 0;
-}
-
-.footer-bg img {
-  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
-  height: 141.3%;
-  top: -20.65%;
-  left: 0;
-  object-fit: cover;
-}
-
-.footer-bg-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to right, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.4) 50%),
-    #000;
+  min-width: 800px;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  display: block;
 }
 
 .footer-content {
@@ -682,18 +691,28 @@ footer {
   z-index: 2;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 60px 40px;
+  padding: 60px 40px 28px;
   width: 100%;
-  text-align: center;
-}
-
-/* Centered title and calendar */
-.footer-top-row {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-top-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 20px;
-  margin-bottom: 0;
+  max-width: 520px;
 }
 
 .footer-title {
@@ -707,14 +726,14 @@ footer {
 
 .footer-calendar-group {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   flex-shrink: 0;
 }
 
 .footer-date-label {
-  text-align: center;
+  text-align: right;
 }
 
 .footer-date-label strong {
@@ -781,15 +800,14 @@ footer {
   color: rgba(255,255,255,0.7);
   letter-spacing: -0.36px;
   max-width: 520px;
-  margin: 20px auto 24px;
+  margin: 0;
 }
 
 .footer-bottom {
-  margin-top: 40px;
   padding-top: 20px;
   border-top: 1px solid rgba(255,255,255,0.05);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   font-weight: 600;
   font-size: 14px;
@@ -798,6 +816,7 @@ footer {
   flex-wrap: wrap;
   gap: 12px;
 }
+
 
 /* ── Accordion styles ─────────────────────────────────────── */
 .phase-info-section { 
@@ -974,7 +993,7 @@ footer {
 [data-animate="fade-up"]    { transform: translateY(36px); }
 [data-animate="fade-left"]  { transform: translateX(-36px); }
 [data-animate="fade-right"] { transform: translateX(36px); }
-[data-animate="fade-in"]    { /* no transform */ }
+[data-animate="fade-in"]    { transform: none; }
 [data-animate="scale-in"]   { transform: scale(0.94); }
 
 [data-animate].is-visible {
@@ -1023,9 +1042,9 @@ footer {
     grid-template-columns: 1fr 1fr;
   }
 
-  .audience-cards {
-    grid-template-columns: 1fr 1fr;
-  }
+  .audience-section  { min-height: 700px; }
+  .audience-header   { margin-bottom: 220px; }
+  .audience-cards    { grid-template-columns: 1fr 1fr; }
 
   .outcomes-inner {
     grid-template-columns: 1fr;
@@ -1067,20 +1086,11 @@ footer {
   }
 
   /* Footer */
-  .footer-content { 
-    padding: 50px 30px; 
-  }
-  
-  .footer-title {
-    font-size: 40px;
-  }
-
-  .footer-top-row {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .footer-calendar-group { align-self: center; }
+  .footer-content    { padding: 50px 30px 24px; }
+  .footer-title      { font-size: 36px; }
+  .footer-top-row    { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .footer-left       { max-width: 100%; }
+  .footer-blob-img   { min-width: 700px; }
 }
 
 /* ── Mobile (≤ 768px) ────────────────────────────────────── */
@@ -1099,19 +1109,16 @@ footer {
   .tagline-stats-img { max-width: 280px; margin-bottom: 32px; }
 
   /* About */
-  .about-section { padding: 280px 20px 60px; }
+  .about-section { padding: 120px 20px 60px; }
   .about-quote   { font-size: 16px; }
-
-  /* Highlight banner */
-  .highlight-section { padding: 60px 20px 60px; }
-  .highlight-box     { padding: 28px 24px; }
 
   /* Program */
   .program-section { padding: 80px 20px; }
   .cards-grid { grid-template-columns: 1fr; }
 
   /* Audience */
-  .audience-section { padding: 80px 20px; }
+  .audience-section { padding: 60px 20px 0; min-height: 600px; }
+  .audience-header  { margin-bottom: 160px; }
   .audience-cards   { grid-template-columns: 1fr 1fr; gap: 20px; }
   .highlight-box    { padding: 24px 20px; }
   .highlight-box p  { font-size: 16px; }
@@ -1153,18 +1160,26 @@ footer {
   }
 
   /* Footer */
-  .footer-content { padding: 40px 20px; }
-  .footer-desc    { font-size: 16px; }
-  .footer-bottom  { font-size: 12px; }
+  .footer-content    { padding: 40px 20px 24px; }
+  .footer-top-row    { align-items: center; }
+  .footer-left       { align-items: center; text-align: center; }
+  .footer-desc       { font-size: 16px; text-align: center; }
+  .footer-date-label { text-align: center; }
+  .footer-bottom     { font-size: 12px; flex-direction: column; align-items: center; gap: 4px; }
+  .footer-blob-img   { min-width: 600px; }
 }
 
 /* ── Small mobile (≤ 480px) ──────────────────────────────── */
 @media (max-width: 480px) {
 
   /* Audience cards: single column, centered */
+  .audience-section    { min-height: 520px; }
+  .audience-header     { margin-bottom: 100px; }
   .audience-cards      { grid-template-columns: 1fr; }
   .audience-cards > div { text-align: center; }
   .aud-card-icon       { margin: 0 auto 16px; }
+
+  .about-section { padding: 80px 20px 50px; }
 
   .hero-badge { width: 150px; left: 20px; bottom: 5%; }
 
